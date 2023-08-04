@@ -40,4 +40,4 @@ O projeto representa uma aplicação onde um cliente pode cadastrar, editar e de
 </ul><br>
 
 <h2 font-family="pattaya">Link do Deploy via Vercel</h2><br>
-<a href="https://front-end-gamma-pied.vercel.app" font-family="robotto" font-size="16px">Costumer Contact</a>
+<a href="https://front-end-gamma-pied.vercel.app" font-family="robotto" font-size="16px">Ki Agenda</a>
