@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import logo from "../../assets/img/Logo_Icon_Large.svg";
 import { StyledMain } from "./style.js";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -36,7 +36,7 @@ export const LoginPage = () => {
 
       if (localStorage.getItem("@TOKEN")) {
         setTimeout(() => {
-          navigate("/Dashboard");
+          navigate("/dashboard");
         }, 3000);
       } else {
         setTimeout(() => {

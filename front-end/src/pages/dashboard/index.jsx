@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Header } from "../../components/Header";
 import { StyledContainer } from "./style";
 import { Buttons } from "../../components/Button";
@@ -6,17 +6,12 @@ import addnewContact from "../../assets/img/Add_Phone.png";
 import { ListContact } from "../../components/ListContact";
 import { UserContext } from "../../context/userContext";
 import { ContactContext } from "../../context/contactContext";
-import { useNavigate } from "react-router-dom";
-import { ModalEditUser } from "../../components/ModalEdit";
+import { ModalCreateContact } from "../../components/ModalContact/create";
+
 
 export const HomePage = () => {
   const { user } = useContext(UserContext);
-  const {
-    toggleModaladdContact,
-    toggleModalEditContact,
-    setEditUserOpen,
-    modalEditUserOpen,
-  } = useContext(ContactContext);
+  const { toggleModaladdContact, modalContactsOpen } = useContext(ContactContext);
 
   return (
     <>
@@ -24,16 +19,17 @@ export const HomePage = () => {
       <StyledContainer>
         <div className="headPage">
           <h2>Lista de Contatos</h2>
-          <Buttons type="button" onClick={() => toggleModalEditContact(true)}>
+          <Buttons type="button" onClick={() => toggleModaladdContact()}>
             <img src={addnewContact} alt="Add Contact" />
           </Buttons>
         </div>
         <div className="Contatcs">
-          {user.contacts.map((element) => (
+          {user.contacts?.map((element) => (
             <ListContact key={element.id} element={element} />
           ))}
         </div>
       </StyledContainer>
+      {modalContactsOpen && <ModalCreateContact />}
     </>
   );
 };

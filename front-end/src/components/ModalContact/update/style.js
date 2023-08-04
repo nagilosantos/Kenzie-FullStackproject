@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SectionModalEdit = styled.section`
+export const SectionModalEditContact = styled.section`
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -23,7 +23,6 @@ export const SectionModalEdit = styled.section`
     align-items: flex-start;
     padding: 20px 22px 32px;
     gap: 22px;
-
   }
 
   .modal {
@@ -66,6 +65,16 @@ export const SectionModalEdit = styled.section`
     gap: 35px;
     width: 100%;
 
+    h4 {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 21px;
+      line-height: 24px;
+      color: #f8f9fa;
+      text-align: center;
+    }
+
     p {
       font-family: "Inter", sans-serif;
       font-style: normal;
@@ -75,20 +84,19 @@ export const SectionModalEdit = styled.section`
       color: red;
       margin-top: -17px;
     }
-
   }
 
-  .boxBtn {
+  .buttonsEdit{
     display: flex;
     width: 100%;
     gap: 25px;
     button:nth-child(1) {
-      width: 60%;
+      width: 45%;
       background: #ff8405;
     }
 
     button:nth-child(2) {
-      width: 30%;
+      width: 45%;
       background: #868e96;
     }
   }

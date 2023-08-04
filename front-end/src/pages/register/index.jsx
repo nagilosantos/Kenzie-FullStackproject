@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { StyledMainReg } from "./style";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/Logo_Icon_Large.svg";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UserContext } from "../../context/userContext";
@@ -29,7 +29,6 @@ export const RegisterPage = () => {
     resolver: yupResolver(SchemaRegister),
   });
 
-
   const submit = async (registerData) => {
     setLoading(true);
     setTimeout(async () => {
@@ -52,9 +51,8 @@ export const RegisterPage = () => {
         </div>
 
         <form onSubmit={handleSubmit(submit)} noValidate>
-          
           <h2> Cadastro </h2>
-          
+
           <Input
             type="text"
             label="Nome"
@@ -79,14 +77,6 @@ export const RegisterPage = () => {
             error={errors.password}
           ></Input>
 
-          {/* <Input
-            type="password"
-            label="Confirmação de senha"
-            placeholder="Digite sua Senha novamente"
-            register={register("passwordConfirm")}
-            error={errors.passwordConfirm}
-          ></Input> */}
-
           <Input
             type="text"
             label="Telefone"
@@ -98,9 +88,7 @@ export const RegisterPage = () => {
           <Buttons type="submit" disabled={loading}>
             {loading ? <Loading /> : "Cadastrar"}
           </Buttons>
-
         </form>
-
       </div>
     </StyledMainReg>
   );

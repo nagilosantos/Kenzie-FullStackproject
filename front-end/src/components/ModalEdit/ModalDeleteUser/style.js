@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
-export const SectionModalEdit = styled.section`
+import { styled } from "styled-components";
+export const SectionModalDelete = styled.section`
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -10,7 +9,7 @@ export const SectionModalEdit = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1001;
+  z-index: 1002;
 
   .modalContent {
     max-width: 500px;
@@ -23,7 +22,6 @@ export const SectionModalEdit = styled.section`
     align-items: flex-start;
     padding: 20px 22px 32px;
     gap: 22px;
-
   }
 
   .modal {
@@ -60,36 +58,38 @@ export const SectionModalEdit = styled.section`
     }
   }
 
-  form {
+  .TitleDelete {
+    width: 100%;
+    height: 80px;
     display: flex;
     flex-direction: column;
-    gap: 35px;
-    width: 100%;
+    gap: 20px;
+    align-items: center;
 
-    p {
-      font-family: "Inter", sans-serif;
+    h3 {
+      font-family: "Inter";
       font-style: normal;
-      font-weight: 600;
-      font-size: 12px;
-      line-height: 18px;
-      color: red;
-      margin-top: -17px;
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 24px;
+      color: #f8f9fa;
     }
 
-  }
+    .buttonsDeleteModal {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
 
-  .boxBtn {
-    display: flex;
-    width: 100%;
-    gap: 25px;
-    button:nth-child(1) {
-      width: 60%;
-      background: #ff8405;
-    }
+      button:nth-child(1) {
+        width: 60%;
+        background: #ff8405;
+      }
 
-    button:nth-child(2) {
-      width: 30%;
-      background: #868e96;
+      button:nth-child(2) {
+        width: 30%;
+        background: #868e96;
+      }
     }
   }
 `;

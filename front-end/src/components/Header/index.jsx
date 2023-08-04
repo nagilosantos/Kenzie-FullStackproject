@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Head } from "./style.js";
 import logo from "../../assets/img/Logo_Icon_Small.svg";
 import userImg from "../../assets/img/Usuário.png";
@@ -8,13 +8,10 @@ import { ContactContext } from "../../context/contactContext.jsx";
 import { ModalEditUser } from "../ModalEdit/index.jsx";
 
 export const Header = ({ element }) => {
-  const { toggleModalEditUser, modalEditUserOpen } = useContext(ContactContext);
+  const { toggleModalEditUser, modalEditUserOpen, setEditUserOpen } =
+    useContext(ContactContext);
   const navigate = useNavigate();
   const user = element.user.name;
-
-  const handleOpenModal = () => {
-    toggleModalEditUser(true);
-  };
 
   return (
     <Head>
@@ -45,7 +42,12 @@ export const Header = ({ element }) => {
           <h2>
             Owner: <small>{user}</small>
           </h2>
-          <Buttons type="button" onClick={() => handleOpenModal()}>
+          <Buttons
+            type="button"
+            onClick={() => {
+              toggleModalEditUser();
+            }}
+          >
             Editar Perfil
           </Buttons>
         </div>

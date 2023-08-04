@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../services";
@@ -66,7 +66,7 @@ export const UserProvider = ({ children }) => {
       setLoading(true);
 
       await api.post("/user", userData);
-      
+
       toast.success("Cadastro relizado!");
 
       setTimeout(() => {

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../services";
@@ -10,6 +10,7 @@ export const ContactProvider = ({ children }) => {
   const { user, getUser } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
   //   contact modal
+  const [contact, setContact] = useState(null);
   const [modalEditOpen, setEditOpen] = useState(false);
   const [modalContactsOpen, setContactsOpen] = useState(false);
   const [modalDeleteContact, setmodalDeleteContact] = useState(null);
@@ -46,7 +47,7 @@ export const ContactProvider = ({ children }) => {
 
       getUser();
 
-      toggleModaladdContact(false);
+      toggleModaladdContact();
 
       toast.success("Contato Criado com sucesso!");
     } catch (error) {
@@ -64,7 +65,7 @@ export const ContactProvider = ({ children }) => {
 
       getUser();
 
-      toggleModalEditContact(false);
+      toggleModalEditContact();
 
       toast.success("Alteração Realizada!");
     } catch (error) {
@@ -141,6 +142,19 @@ export const ContactProvider = ({ children }) => {
         removeContact,
         updateProfile,
         deleteProfile,
+        setEditUserOpen,
+        modalEditUserOpen,
+        modalEditOpen,
+        modalContactsOpen,
+        modalDeleteContact,
+        modalDeleteUserOpen,
+        setEditOpen,
+        setContactsOpen,
+        setmodalDeleteContact,
+        setEditUserOpen,
+        setDeleteUserOpen,
+        contact,
+        setContact,
       }}
     >
       {children}

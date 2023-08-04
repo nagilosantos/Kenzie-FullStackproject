@@ -1,4 +1,3 @@
-import React from "react";
 import {  StyledFieldSet, StyledTextField } from "./style";
 
 export const Input = ({ label, type, register, placeholder, error }) => {

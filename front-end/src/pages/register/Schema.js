@@ -17,9 +17,5 @@ export const SchemaRegister = yup.object().shape({
       /(?=.*[@#$%^&+=])/,
       "É necessário ao menos um caractere especial!"
     ),
-  // passwordConfirm: yup
-  //   .string()
-  //   .required("Este campo é obrigatório!")
-  //   .oneOf([yup.ref("password"), null], "A senha não confere"),
   phone: yup.string().required("Este campo é obrigatório!"),
 });

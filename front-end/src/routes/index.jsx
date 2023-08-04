@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { LoginPage } from "../pages/login";
 import { ContactProvider } from "../context/contactContext";
@@ -12,7 +11,7 @@ export const ApplicationRoutes = () => {
     <Routes>
       <Route path="/" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/DashBoard" element={<ProtectedRoutes />}>
+      <Route path="/dashboard" element={<ProtectedRoutes />}>
         <Route
           index
           element={

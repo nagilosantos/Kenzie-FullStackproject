@@ -12,7 +12,7 @@ export const StyledButton = styled.button`
   cursor: pointer;
   border: none;
 
-  :hover{
+  &:hover{
     filter:brightness( .6)
   }
 `;
